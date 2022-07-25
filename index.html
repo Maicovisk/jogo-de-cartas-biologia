@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./script/vue.js"></script>
+    <script src="./script/materialize.min.js"></script>
+    <link rel="stylesheet" href="./styles/materialize.min.css">
+    <link rel="shortcut icon" href="./images/icons/ico.png" type="image/x-icon">
+    <title>Jogo de cartas</title>
+</head>
+<body>
+    <div class="main" id="app">
+        <audio class="sound" src="./music/Card-flip-sound-effect.mp3" hidden></audio>
+        <audio class="music" loop src="./music/Musica Clássica Medieval.mp3" hidden></audio>
+        <header>
+
+            <div class="painel">
+                <div class="iconp">
+                    <img src="./images/icons/volume.png" alt="">
+                </div>
+            </div>
+
+            <div class="p1">    
+                <h1>Jogo da memoria - Biologia</h1>
+            </div>
+            <div class="p2">
+                <div class="instagram icon">
+                    <a href="">
+                        <img src="./images/icons/instagram (1).png" alt="">
+                    </a>
+                </div>
+                <div class="instagram icon">
+                    <a href="">
+                        <img src="./images/icons/facebook.png" alt="">
+                    </a>
+                </div>
+                <div class="instagram icon">
+                    <a href="">
+                        <img src="./images/icons/whatsapp (2).png" alt="">
+                    </a>
+                </div>
+                <div class="instagram icon">
+                    <a href="">
+                        <img src="./images/icons/youtube.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="carrouselin">
+            <div class="carousel">
+                <a v-for="c in 17"
+                    class="carousel-item" href="#one!"><img :src="`./images/${c}.png`"></a>
+              </div>
+        </div>
+
+        <div class="cartas noCartas">
+            <template>
+                <div :class="'one' + selAni(id)" type="quest" v-for="c, id in game_data" @click="closeCard" :id="'_' + id">
+                    <div class="carta c1" :id="id">
+                        <div class="content">
+        
+                        </div>
+                        <div class="footerc">
+                            Genetica
+                        </div>
+                    </div>
+    
+                    <div class="carta ccontent" :id="id">
+                        <div class="content">
+                            {{c['quest']}}
+                        </div>
+                        <div class="footerc">
+                            Genetica
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <template>
+                <div :class="'one' + selAni(id)" type="resp" v-for="c, id in game_data" @click="closeCard" :id="'_' + id">
+                    <div class="carta c1" :id="id">
+                        <div class="content">
+        
+                        </div>
+                        <div class="footerc">
+                            Genetica
+                        </div>
+                    </div>
+    
+                    <div class="carta ccontent" :id="id">
+                        <div class="content">
+                            {{c['resp']}}
+                        </div>
+                        <div class="footerc">
+                            Genetica
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+        <div class="help">
+            <a id="menu" class="waves-effect waves-light btn btn-floating" ><i class="material-icons">help</i></a>
+
+              <!-- Tap Target Structure -->
+            <div class="tap-target" data-target="menu">
+                <div class="tap-target-content">
+                <h5>Title</h5>
+                <p>A bunch of text</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="startGame">
+            <button @click="startGame">começar jogo</button>
+        </div>
+    </div>
+</body>
+<script src="./script/main.js" async></script>
+<script src="./script/mainEfects.js" async></script>
+</html>

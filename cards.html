@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script/vue.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+        }
+
+        img {
+            width: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="cards" id="cards">
+        <img v-for="c in 4" :src="`./images/17.png`" alt="">
+    </div>
+</body>
+<script>
+    const app = new Vue({
+        el: '#cards'
+    })
+</script>
+</html>

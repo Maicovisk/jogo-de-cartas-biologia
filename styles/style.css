@@ -1,0 +1,319 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+body, html, .main {
+    height: 100vh !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: rgba(128, 128, 128, 0.13);
+}
+
+.main {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    align-items: center;
+    color: black;
+    background-color: white;
+    box-shadow: 1px 2px 13px rgba(0, 0, 0, 0.123);
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+
+header h1 {
+    font-size: 25px;
+    padding: 10px;
+    text-align: center;
+    margin: 0px;
+}
+
+header .p2 {
+    width: 100%;
+    padding: 0px 0px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header .icon {
+    width: 30px;
+    display: flex;
+    margin: 0px 10px;
+}
+
+.icon img {
+    width: 100%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.651);
+    border-radius: 100%;
+}
+
+.cartas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+    overflow: visible;
+    height: 100vh;
+    align-content: center;
+}
+
+
+/* control painel */
+.painel {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    right: 15px;
+    top: 130px;
+    z-index: 11;
+    border-radius: 4px;
+    padding: 3px 10px;
+    border: 1px solid rgba(128, 128, 128, 0.288);
+}
+
+.painel .iconp {
+    width: 30px;
+    padding: 7px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+}
+
+.iconp img {
+    width: 100%;
+}
+
+
+/* noCartas */
+.noCartas {
+    display: none !important;
+}
+
+/* carrousel */
+.carrouselin {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.carousel-item img {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.carta {
+    background-color: black;
+    transition: all 500ms linear;
+    background-position: center;
+    background-size: 100%;
+    padding: 10px;
+    width: 13vw;
+    min-width: 100px;
+    height: 20vw;
+    min-height: 150px;
+    border-radius: 4px;
+    margin: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backface-visibility: hidden;
+    user-select: none;
+    pointer-events: none;
+    max-width: 150px;
+    max-height: 200px;
+    position: relative;
+}
+
+.one {
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+.StartRight {
+    animation: startr1 1500ms ease;
+}
+
+@keyframes startr1 {
+    from {
+        transform: translate(-800px, -800px) rotate(-360deg);
+    }
+}
+
+.StartLeftbottom {
+    animation: start2 1500ms ease;
+}
+
+@keyframes start2 {
+    from {
+        transform: translate(800px, -800px) rotate(360deg);
+    }
+}
+.StartRightbottom {
+    animation: startr3 1500ms ease;
+}
+
+@keyframes startr3 {
+    from {
+        transform: translate(-800px, 800px) rotate(-360deg);
+    }
+}
+
+.StartLefttop {
+    animation: start4 1500ms ease;
+}
+
+@keyframes start4 {
+    from {
+        transform: translate(800px, 800px) rotate(360deg);
+    }
+}
+
+.cartas .c1 {
+    position: absolute;
+    z-index: 1;
+}
+
+.closecard {
+    transform: rotateY(180deg);
+}
+
+.contentClosexard {
+    transform: rotateY(0deg) !important;   
+}
+
+
+.cartas .ccontent  {
+    transform: rotateY(-180deg);
+}
+
+.cartas .ccontent .content {
+    background-image: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+}
+
+.carta .content {
+    border: 1px solid rgba(128, 128, 128, 0.164);
+    width: 100%;
+    height: 90%;
+    background-image: url('../images/gene.png');
+    background-position: center;
+    background-size: 90%;
+    background-repeat: no-repeat;
+}
+
+.footerc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 20px;
+}
+
+
+/* startGame */
+.startGame {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    padding: 5px 30px;
+}
+
+.startGame button {
+    width: 100%;
+    max-width: 600px;
+    height: 50px;
+    background-color: rgb(196, 99, 75);
+    border: none;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.452);
+    border-radius: 10px 0px;
+    color: black;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    cursor: pointer;
+
+    animation: btns 600ms linear infinite alternate;
+}
+
+@keyframes btns {
+    from {
+        transform: scale(.95);
+    }
+}
+
+/* removing card */
+.removing {
+    animation: rm 2s linear;
+}
+
+@keyframes rm {
+    to {
+        transform: translate(0px, 1600px) rotate(360deg);
+    }
+}
+
+/* opacityCard */
+
+.opacityCard {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* media */
+@media (max-width: 445px) {
+    .painel {
+        top: 100px;
+    }
+
+
+    .carta {
+        min-width: 90px !important;
+        min-height: 130px !important;
+    }
+
+    .carta * {
+        font-size: 12px !important;
+    }
+}
+
+/*help */
+.help {
+    position: absolute;
+}
+
+.help #menu .material-icons{
+    font-size: 10px !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
